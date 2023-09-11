@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Object Detection Using YOLO</title>
+    <style>
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: Arial, sans-serif;
+  background: url("https://www.worldatlas.com/r/w768/upload/34/3f/ce/shutterstock-122755672.jpg") no-repeat center/cover #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(245, 245, 245, 0.1);
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Heading styles */
+h1 {
+  font-size: 5em;
+  color: #1c325a;
+  margin-bottom: 1em;
+  text-align: center;
+  text-shadow: -1px -1px #9df, 1px 1px #49d, -3px 0 4px #010350;
+  padding:24px 32px 32px 32px;
+  text-align:center;
+  display:inline;
+  line-height:150px;
+}
+
+/* Button container styles */
+.button-container {
+  display: flex;
+}
+
+/* Button styles */
+.btn{
+  border: 1px solid #012e4d;
+  background: none;
+  padding: 10px 20px;
+  font-size: 20px;
+  
+  cursor: pointer;
+  margin: 10px;
+  transition: 0.8s;
+  position: relative;
+  overflow: hidden;
+}
+.btn1,.btn2{
+  color: #012e4d;
+}
+.btn1:hover,.btn2:hover{
+  color: #fff;
+}
+.btn::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: #012e4d;
+  z-index: -1;
+  transition: 0.5s;
+}
+.btn1::before,.btn2::before{
+  top: 0;
+  border-radius: 0 0 50% 50%;
+}
+.btn1:hover::before,.btn2:hover::before{
+  height: 200%;
+}
+
+/* .btn:last-child {
+  margin-right: 0;
+} */
+</style>
+</head>
+<body>
+    <h1>Eye in the Sky</h1>
+    <form action="." class="btn-container" method="POST">
+      {% csrf_token %}
+    <button type="submit" class="btn btn1">Run Object Detection</button>
+    </form>
+    <form action="{% url 'stop' %}" class="btn-container" method="POST">
+      {% csrf_token %}
+      <button type="submit" class="btn btn2">Shutdown Server</button>
+    </form>
+</body>
+</html>
