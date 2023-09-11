@@ -15,4 +15,4 @@ After that when you  click on 'Run Object Detection', after waiting a litle whil
 
 ![Alt text](2-1.png)
 
-On getting the object detection to work you can close the server by clicking on  "Shut Down Server"
+On getting the object detection to work you can close the server by clicking on  "Shut Down Server" visible in the "detect/home" page
